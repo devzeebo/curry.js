@@ -4,7 +4,9 @@
   "description": "A lightweight (1008 bytes unminified!) curry implementation applied to the Function prototype. Approximately 70% faster than the naive curry solution using Function.apply",
   "main": "curry.js",
   "scripts": {
-    "test": "browserify test/tests.js | testling"
+    "browserify": "browserify",
+    "testling": "testling",
+    "test": "tape tests/*.js"
   },
   "repository": {
     "type": "git",
@@ -26,5 +28,18 @@
     "browserify": "^14.0.0",
     "tape": "^4.6.3",
     "testling": "^1.7.1"
+  },
+  "testling": {
+    "files": "tests/*.js",
+    "browsers": [
+      "ie/6..latest",
+      "chrome/22..latest",
+      "firefox/16..latest",
+      "safari/latest",
+      "opera/11.0..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
   }
 }
